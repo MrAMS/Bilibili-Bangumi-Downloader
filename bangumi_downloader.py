@@ -1,6 +1,13 @@
 import os
 
-LINK_PREFIX = "https://www.bilibili.com/bangumi/play/ep"
+# Attention!
+# Must work with you-get
+
+# default settings
+
+LINK_PREFIX = 'https://www.bilibili.com/bangumi/play/ep'
+SAVE_FOLDER = '/Users/santiego/Movies/番/轻音少女.第一季'
+COOKIE_FOLDER = '/Users/santiego/Library/Application\ Support/Firefox/Profiles/qbrdrjqq.default-release/cookies.sqlite'
 
 def log(msg, color):
 	return '\033[0;{};40m{}\033[0m'.format(color, msg)
@@ -13,11 +20,11 @@ def run():
 	print(log('Bilibili Bangumi Downloader :)', 32))
 	print(log('work with you-get', 32))
 	op=int(str(input(log('*ep id?', 36)))[2:])
-	ed=op+int(input(log('how many?', 36)) or 1)
+	ed=op+1+int(input(log('how many?', 36)) or 1)
 	path = input(log('Save in?', 36)) \
-		or '/Users/santiego/Movies/番/轻音少女.第一季'
+		or SAVE_FOLDER
 	cookie = input(log('Cookies.sqlite?', 36)) \
-		or '/Users/santiego/Library/Application\ Support/Firefox/Profiles/qbrdrjqq.default-release/cookies.sqlite'
+		or COOKIE_FOLDER
 	for cur in range(op, ed+1):
 		print(log('Downloading ep{}...'.format(cur), 33))
 		for i in range(1, 5):
