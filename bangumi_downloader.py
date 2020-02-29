@@ -14,7 +14,6 @@ def log(msg, color):
 	return '\033[0;{};40m{}\033[0m'.format(color, msg)
 
 def download(path, url, cookie):
-	print("you-get -o {0} {1} -c {2}".format(path, url, cookie))
 	return os.system("you-get -o {0} {1} -c {2}".format(path, url, cookie))
 
 def run():
