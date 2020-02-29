@@ -13,7 +13,7 @@ def run():
 	print(log('Bilibili Bangumi Downloader :)', 32))
 	print(log('work with you-get', 32))
 	op=int(str(input(log('*ep id?', 36)))[2:])
-	ed=op+1+int(input(log('how many?', 36)) or 1)
+	ed=op+int(input(log('how many?', 36)) or 1)
 	path = input(log('Save in?', 36)) \
 		or '/Users/santiego/Movies/番/轻音少女.第一季'
 	cookie = input(log('Cookies.sqlite?', 36)) \
