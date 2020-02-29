@@ -8,6 +8,7 @@ import os
 LINK_PREFIX = 'https://www.bilibili.com/bangumi/play/ep'
 SAVE_FOLDER = '/Users/santiego/Movies/番/轻音少女.第一季'
 COOKIE_FOLDER = '/Users/santiego/Library/Application\ Support/Firefox/Profiles/qbrdrjqq.default-release/cookies.sqlite'
+MAX_TRY_TIMES = 4
 
 def log(msg, color):
 	return '\033[0;{};40m{}\033[0m'.format(color, msg)
@@ -27,7 +28,7 @@ def run():
 		or COOKIE_FOLDER
 	for cur in range(op, ed+1):
 		print(log('Downloading ep{}...'.format(cur), 33))
-		for i in range(1, 5):
+		for i in range(1, MAX_TRY_TIMES+1):
 			if(download(path, LINK_PREFIX+str(cur), cookie) == 0):
 				break
 			else:
