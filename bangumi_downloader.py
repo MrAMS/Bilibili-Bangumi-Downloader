@@ -1,5 +1,5 @@
-import os, sys, timeit
-
+# Bilibili Bangumi Downloader
+#
 # Attention!
 # Must work with you-get
 
@@ -9,6 +9,9 @@ LINK_PREFIX = 'https://www.bilibili.com/bangumi/play/ep'
 SAVE_FOLDER = '/Users/santiego/Downloads'
 COOKIE_FOLDER = '/Users/santiego/Library/Application\ Support/Firefox/Profiles/qbrdrjqq.default-release/cookies.sqlite'
 MAX_TRY_TIMES = 10
+
+import os, sys, timeit
+
 
 WHITE = 37
 BLACK = 30
@@ -34,14 +37,14 @@ def run():
 	print_log(log('By Santiego', WHITE))
 	print_log(log('work with you-get', WHITE))
 	print_log(log('ep id', BLACK, 47))
-	print_log(log('(e.g. ep21272, check your video link and get the ep id)', CYAN))
+	print_log(log('(e.g. ep21272, check your video link and input the ep id to download)', CYAN))
 	ep_id=int(str(input())[2:])
 	print_log(log('Save in?', BLACK, 47), False)
 	print_log(log('(or skip)', CYAN))
 	path = input() \
 		or SAVE_FOLDER
 	print_log(log('Cookies.sqlite path', BLACK, 47))
-	print_log(log('(Firefox\'s Cookies.sqlite file path, or skip)', CYAN))
+	print_log(log('(input Firefox\'s Cookies.sqlite file path to download 1080+, or skip)', CYAN))
 	cookie = input() \
 		or COOKIE_FOLDER
 	time_s = timeit.default_timer()
